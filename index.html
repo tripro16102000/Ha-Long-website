@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hạ Long Manufacturing & Export</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome cho icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo-wrapper">
+            <img src="./img/hl_logo.png" alt="Ha Long JSC Logo" class="company-logo">
+            <div class="logo" data-key="nav_logo">
+                Công ty Cổ phần Sản xuất và Xuất nhập khẩu Hạ Long
+            </div>
+        </a>
+            <ul class="nav-links">
+                <li><a href="#home" data-key="nav_home">Trang chủ</a></li>
+                <li><a href="#about" data-key="nav_about">Giới thiệu</a></li>
+                <li><a href="#contact" data-key="nav_contact">Liên hệ</a></li>
+            </ul>
+        <div class="lang-selector">
+            <img src="https://flagcdn.com/w40/vn.png" alt="Tiếng Việt" class="flag-icon active" onclick="changeLanguage('vi', this)" title="Tiếng Việt">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag-icon" onclick="changeLanguage('en', this)" title="English">
+            <img src="https://flagcdn.com/w40/cn.png" alt="中文" class="flag-icon" onclick="changeLanguage('zh', this)" title="中文">
+        </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1 data-key="hero_title">Sản Xuất & Xuất Nhập Khẩu Hạ Long</h1>
+            <p data-key="hero_desc">Kết nối thương mại toàn cầu với sản phẩm chất lượng cao.</p>
+            <a href="#contact" class="btn" data-key="btn_contact">Liên hệ ngay</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container section">
+        <h2 class="section-title" data-key="about_title">Giới thiệu công ty</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p data-key="about_p1" style="font-size: large; font-style: oblique;">Công ty Cổ phần Sản xuất và Xuất nhập khẩu Hạ Long là doanh nghiệp chuyên nghiệp...</p>
+                <p data-key="about_p2" style="font-size: large; font-style: oblique">Chúng tôi cam kết mang đến giải pháp tối ưu cho chuỗi cung ứng toàn cầu.</p>
+            </div>
+            
+            <!-- Phần hình ảnh xuất hiện khi scroll -->
+            <div class="about-gallery">
+                <div class="reveal-img">
+                    <img src="../img/about1.jpg" alt="Factory 1">
+                </div>
+                <div class="reveal-img">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=500&q=80" alt="Shipping">
+                </div>
+                <div class="reveal-img">
+                    <img src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=500&q=80" alt="Factory 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light section">
+    <div class="container">
+        <div class="contact-wrapper">
+            
+            <div class="contact-info">
+                <h3 data-key="company_full_name">Công ty Cổ phần Sản xuất và Xuất nhập khẩu Hạ Long</h3>
+                <p data-key="company_address"><i class="fas fa-map-marker-alt"></i> 
+                    Số 29/232, đường Trường Chinh, phường Kiến An, thành phố Hải Phòng, Việt Nam
+                <p ><i class="fas fa-file-contract"></i> <span data-key="company_licence">Giấy phép:</span> 5262/SCT (MS- TPDL)</p>
+                <p data-key="company_phone"><i class="fas fa-phone"></i>Hotline: +84.865.236.992</p>
+                <p data-key="company_email"><i class="fas fa-envelope"></i>Email: tntxhalong@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2026 Công ty Cổ phần Sản xuất và Xuất nhập khẩu Hạ Long.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

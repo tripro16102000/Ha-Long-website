@@ -1,0 +1,181 @@
+/* Reset & General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { line-height: 1.6; color: #333; }
+.container { max-width: 1100px; margin: auto; padding: 0 2rem; overflow: hidden; }
+.section { padding: 4rem 0; }
+.section-title { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #0044cc; }
+.bg-light { background: #f4f4f4; }
+.btn { display: inline-block; background: #0044cc; color: #fff; padding: 0.8rem 2rem; border: none; cursor: pointer; text-decoration: none; border-radius: 5px; }
+
+/* Header */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+/* Container chứa logo, làm cho nó có thể click được */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit; /* Giữ màu chữ */
+    gap: 15px; /* Khoảng cách giữa hình và chữ */
+}
+
+/* Định dạng hình ảnh logo */
+.company-logo {
+    height: 70px; /* Chiều cao tối đa của logo trên desktop */
+    width: auto; /* Giữ tỷ lệ ảnh */
+    display: block;
+}
+
+/* Container cho phần chữ bên cạnh logo */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: #0044cc; }
+.logo span { color: #333; }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { padding: 0.5rem 1rem; text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+.nav-links li a:hover { color: #0044cc; }
+.lang-selector {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.flag-icon {
+    width: 28px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    filter: grayscale(60%); /* Làm mờ các lá cờ chưa chọn */
+    border: 2px solid transparent;
+}
+
+.flag-icon:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+.flag-icon.active {
+    filter: grayscale(0%);
+    border-bottom: 2px solid #0044cc; /* Đánh dấu ngôn ngữ hiện tại */
+    transform: scale(1.1);
+}
+
+/* Ẩn selector cũ nếu còn */
+#langSelect { display: none; }
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+/* About Grid */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+
+/* Contact */
+.contact-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+#contactForm input, #contactForm textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+
+/* Responsive */
+.menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+
+@media (max-width: 768px) {
+    .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+    .nav-links { display: none; } /* Đơn giản hóa cho mobile */
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 2rem; }
+}
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.6rem; /* Giảm size chữ tiêu đề trên mobile */
+        padding: 0 10px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        height: 70px; /* Giảm chiều cao trên mobile */
+        padding: 0 1rem;
+    }
+
+    .company-logo {
+        height: 50px; /* Logo nhỏ hơn trên mobile */
+    }
+
+    .brand-name {
+        font-size: 1.2rem; /* Chữ nhỏ hơn */
+    }
+
+    .brand-subtext {
+        font-size: 0.8rem;
+    }
+}
+/* Layout cho Gallery */
+.about-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.reveal-img {
+    opacity: 0;
+    transform: translateY(50px); /* Đẩy xuống 50px */
+    transition: all 0.8s ease-out; /* Thời gian chuyển động */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.reveal-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Class này sẽ được JS thêm vào khi scroll tới */
+.reveal-img.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hiệu ứng trễ cho từng hình (tạo cảm giác lần lượt) */
+.reveal-img:nth-child(2) { transition-delay: 0.2s; }
+.reveal-img:nth-child(3) { transition-delay: 0.4s; }
