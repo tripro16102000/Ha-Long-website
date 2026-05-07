@@ -22,7 +22,8 @@ const translations = {
         company_phone: "Hotline: +84.865.236.992",  
         company_email: "Email: tntxhalong@gmail.com" ,
         rep_title: "Our Representative",
-        person_title: "Sales Manager / Representative"
+        person_title: "Sales Manager / Representative",
+        person_name: "Mr. NGUYEN THE NAM"
     },
     vi: {
         nav_logo: "Công ty Cổ phần SX & XNK Hạ Long ",
@@ -46,7 +47,8 @@ const translations = {
         company_phone: "Hotline: +84.865.236.992",
         company_email: "Email: tntxhalong@gmail.com",
         rep_title: "Đại diện của chúng tôi",
-        person_title: "Giám đốc kinh doanh / Đại diện"
+        person_title: "Giám đốc kinh doanh / Đại diện",
+        person_name: "Ông NGUYỄN THẾ NAM"
     },
     zh: {
         nav_logo: "下龙生产与进出口股份公司",
@@ -70,7 +72,8 @@ const translations = {
         company_phone: "热线: +84.865.236.992",
         company_email: "电子邮件: tntxhalong@gmail.com",
         rep_title: "我们的代表",
-        person_title: "销售经理 / 代表"
+        person_title: "销售经理 / 代表",
+        person_name: "阮世南先生"    
     }
 };
 
@@ -154,5 +157,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const target = document.querySelector(".business-card");
     if (target) {
         observer.observe(target);
+    }
+});
+
+function openModal(imgSrc) {
+    document.getElementById("qrModal").style.display = "block";
+    document.getElementById("modalImg").src = imgSrc;
+}
+
+function closeModal() {
+    document.getElementById("qrModal").style.display = "none";
+}
+
+// Đóng modal khi nhấn phím Esc
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
     }
 });

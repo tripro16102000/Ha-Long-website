@@ -52,13 +52,13 @@
             <!-- Phần hình ảnh xuất hiện khi scroll -->
             <div class="about-gallery">
                 <div class="reveal-img">
-                    <img src="../img/about1.jpg" alt="Factory 1">
+                    <img src="../img/about1.png" alt="Factory 1">
                 </div>
                 <div class="reveal-img">
-                    <img src="../img/about2.jpg" alt="Factory 2">
+                    <img src="../img/about2.png" alt="Factory 2">
                 </div>
                 <div class="reveal-img">
-                    <img src="../img/about3.jpg" alt="Factory 3">
+                    <img src="../img/about4.png" alt="Factory 3">
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                         </div>
                         
                         <div class="card-body-rep">
-                            <h2 class="rep-name">Mr. NGUYEN THE NAM</h2>
+                            <h2 class="rep-name" data-key="person_name">Mr. NGUYEN THE NAM</h2>
                             <p class="rep-title" data-key="person_title">Sales Manager / Representative</p>
                             
                             <div class="rep-details">
@@ -87,13 +87,37 @@
                                     <a href="tel:+84865236922">+84 865 236 922</a>
                                 </div>
                                 <div class="rep-item">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>Zalo / WhatsApp: +84 865 236 922</span>
-                                </div>
-                                <div class="rep-item">
                                     <i class="fas fa-envelope"></i>
                                     <a href="mailto:tntxhalong@gmail.com">tntxhalong@gmail.com</a>
                                 </div>
+                            </div>
+                            <div class="qr-social-container">
+                                <div class="qr-item" onclick="openModal('./img/zalo.jpg')">
+                                    <div class="qr-img-box">
+                                        <img src="./img/zalo.jpg" alt="Zalo">
+                                    </div>
+                                    <p>Zalo</p>
+                                </div>
+
+                                <div class="qr-item" onclick="openModal('./img/whatsapp.jpg')">
+                                    <div class="qr-img-box">
+                                        <img src="./img/whatsapp.jpg" alt="WhatsApp">
+                                    </div>
+                                    <p>WhatsApp</p>
+                                </div>
+
+                                <div class="qr-item" onclick="openModal('./img/wechat.jpg')">
+                                    <div class="qr-img-box">
+                                        <img src="./img/wechat.jpg" alt="WeChat">
+                                    </div>
+                                    <p>WeChat</p>
+                                </div>
+                            </div>
+
+                            <div id="qrModal" class="modal" onclick="closeModal()">
+                                <span class="close-btn">&times;</span>
+                                <img class="modal-content" id="modalImg">
+                                <div id="caption">Scan to connect</div>
                             </div>
                         </div>
                     </div>
@@ -108,21 +132,25 @@
     <section class="bg-light section">
     <div class="container">
         <div class="contact-wrapper">
-        
-            <div class="contact-info">
-                <div style="width: 150px; flex-shrink: 0;">
+            <div style="width: 150px; flex-shrink: 0;">
                 <img src="./img/hl_logo.png" alt="Ha Long Logo" style="width: 100%; height: auto;">
-            </div>
+                </div>
+            <div class="contact-info">
+                
                 <h3 data-key="company_full_name">Ha Long Manufacturing and Import-Export Joint Stock Company</h3>
-                <p data-key="company_address"><i class="fas fa-map-marker-alt"></i> 
-                    Number 29/232, Truong Chinh Street, Kien An Ward, Hai Phong City, Vietnam
+                <p><i class="fas fa-map-marker-alt"></i>                
+                        <span data-key="company_address">Number 29/232, Truong Chinh Street, Kien An Ward, Hai Phong City, Vietnam</span>
                 </p>
                 <p ><i class="fas fa-file-contract"></i> <span data-key="company_licence">License:</span> 5262/SCT (MS- TPDL)</p>
                 <p >
-                    <i class="fas fa-phone"></i>Hotline: 
+                    <i class="fas fa-phone"></i>
+                    Hotline: 
                     <a href="tel:+84865236922" style="color: inherit; text-decoration: underline;">+84.865.236.922</a>
                 </p>
-                <p data-key="company_email"><i class="fas fa-envelope"></i>Email: tntxhalong@gmail.com</p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    Email: tntxhalong@gmail.com
+                </p>
             </div>
         </div>
     </div>

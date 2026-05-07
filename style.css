@@ -114,7 +114,7 @@ nav {
 .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
 
 @media (max-width: 768px) {
-    .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+    .about-grid, .contact-wrapper { display: grid; grid-template-columns: 1fr; }
     .nav-links { display: none; } /* Đơn giản hóa cho mobile */
     .menu-toggle { display: block; }
     .hero h1 { font-size: 2rem; }
@@ -166,7 +166,7 @@ nav {
 
 .reveal-img img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     display: block;
 }
@@ -298,4 +298,96 @@ nav {
     opacity: 1;
     transform: translateX(0); /* Trở về vị trí gốc */
     filter: blur(0);
+}
+/* Container chính */
+.qr-social-container {
+    display: flex;
+    justify-content: center; /* Căn giữa toàn bộ khối */
+    gap: 20px;               /* Khoảng cách đều giữa các cột */
+    margin-top: 25px;
+    padding: 10px;
+}
+
+/* Từng cột QR */
+.qr-item {
+    display: flex;
+    flex-direction: column;  /* Xếp ảnh trên, chữ dưới */
+    align-items: center;     /* Căn giữa theo trục dọc */
+    flex: 1;                 /* Chia đều độ rộng cho mỗi cột */
+    max-width: 80px;         /* Giới hạn độ rộng tối đa */
+    cursor: pointer;
+}
+
+/* Khung chứa ảnh để ảnh luôn cùng kích thước */
+.qr-img-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;      /* Khoảng cách giữa ảnh và chữ */
+}
+
+.qr-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Đảm bảo ảnh không bị méo */
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+/* Căn chỉnh chữ phía dưới */
+.qr-item p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;      /* Căn chữ ra chính giữa ảnh */
+    white-space: nowrap;     /* Không cho chữ xuống dòng */
+}
+
+/* Hiệu ứng khi di chuột */
+.qr-item:hover img {
+    transform: scale(1.05);
+    border-color: #003366;
+}
+/* Nền tối phía sau Popup */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Làm tối nền */
+    backdrop-filter: blur(5px); /* Làm mờ nền phía sau */
+}
+
+/* Ảnh QR hiện ra chính giữa */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 350px; /* Không cho ảnh to quá */
+    border-radius: 15px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: zoomIn 0.3s;
+}
+
+/* Nút đóng (X) */
+.close-btn {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hiệu ứng phóng to khi mở */
+@keyframes zoomIn {
+    from {transform: translateY(-50%) scale(0)} 
+    to {transform: translateY(-50%) scale(1)}
 }
