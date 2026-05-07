@@ -1,5 +1,29 @@
 // Dữ liệu ngôn ngữ
 const translations = {
+    en: {
+        nav_logo: "Ha Long IMEX",
+        nav_home: "Home",
+        nav_about: "About Us",
+        nav_contact: "Contact",
+        hero_title: "Ha Long Manufacturing and Import-Export Joint Stock Company",
+        hero_desc: "A leader in international production and supply chain services.",
+        btn_contact: "Connect Now",
+        about_title: "About Company",
+        about_p1: "Ha Long Manufacturing and Import-Export Joint Stock Company is a professional enterprise in connecting trade and high-quality production.",
+        about_p2: "We are committed to providing optimal solutions for the global supply chain.",
+        contact_title: "Contact Us",
+        form_name: "Full Name",
+        form_email: "Email",
+        form_msg: "Inquiry details",
+        btn_send: "Submit Inquiry",
+        company_full_name: "Ha Long Manufacturing & Import-Export Joint Stock Company",
+        company_address: "No. 29/232, Truong Chinh Street, Kien An Ward, Hai Phong City, Vietnam",
+        company_licence: "License No: 5262/SCT (MS- TPDL)",
+        company_phone: "Hotline: +84.865.236.992",  
+        company_email: "Email: tntxhalong@gmail.com" ,
+        rep_title: "Our Representative",
+        person_title: "Sales Manager / Representative"
+    },
     vi: {
         nav_logo: "Công ty Cổ phần SX & XNK Hạ Long ",
         nav_home: "Trang chủ",
@@ -20,29 +44,9 @@ const translations = {
         company_address: " Số 29/232, đường Trường Chinh, phường Kiến An, thành phố Hải Phòng, Việt Nam",
         company_licence: "Giấy phép kinh doanh: 5262/SCT (MS- TPDL)",
         company_phone: "Hotline: +84.865.236.992",
-        company_email: "Email: tntxhalong@gmail.com"
-    },
-    en: {
-        nav_logo: "Ha Long Manufacturing & Import-Export JSC",
-        nav_home: "Home",
-        nav_about: "About Us",
-        nav_contact: "Contact",
-        hero_title: "Ha Long Manufacturing & Import-Export JSC",
-        hero_desc: "A leader in international production and supply chain services.",
-        btn_contact: "Connect Now",
-        about_title: "About Company",
-        about_p1: "Ha Long Manufacturing and Import-Export Joint Stock Company is a professional enterprise in connecting trade and high-quality production.",
-        about_p2: "We are committed to providing optimal solutions for the global supply chain.",
-        contact_title: "Contact Us",
-        form_name: "Full Name",
-        form_email: "Email",
-        form_msg: "Inquiry details",
-        btn_send: "Submit Inquiry",
-        company_full_name: "Ha Long Manufacturing & Import-Export Joint Stock Company",
-        company_address: "No. 29/232, Truong Chinh Street, Kien An Ward, Hai Phong City, Vietnam",
-        company_licence: "License No: 5262/SCT (MS- TPDL)",
-        company_phone: "Hotline: +84.865.236.992",  
-        company_email: "Email: tntxhalong@gmail.com" 
+        company_email: "Email: tntxhalong@gmail.com",
+        rep_title: "Đại diện của chúng tôi",
+        person_title: "Giám đốc kinh doanh / Đại diện"
     },
     zh: {
         nav_logo: "下龙生产与进出口股份公司",
@@ -64,7 +68,9 @@ const translations = {
         company_address: "越南海防市Kiến An区Trường Chinh街29/232号",
         company_licence: "许可证号: 5262/SCT (MS- TPDL)",
         company_phone: "热线: +84.865.236.992",
-        company_email: "电子邮件: tntxhalong@gmail.com"
+        company_email: "电子邮件: tntxhalong@gmail.com",
+        rep_title: "我们的代表",
+        person_title: "销售经理 / 代表"
     }
 };
 
@@ -98,7 +104,7 @@ function changeLanguage(lang, element) {
 
 // Khi vừa load trang, kiểm tra xem có ngôn ngữ đã lưu chưa
 window.onload = () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'vi';
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
     const targetFlag = document.querySelector(`img[onclick*="'${savedLang}'"]`);
     if (targetFlag) changeLanguage(savedLang, targetFlag);
 };
@@ -126,4 +132,27 @@ const observer = new IntersectionObserver((entries, observer) => {
 // Theo dõi tất cả các khối hình ảnh
 document.querySelectorAll('.reveal-img').forEach(img => {
     observer.observe(img);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 0.2 // Kích hoạt khi 20% thẻ Card xuất hiện trên màn hình
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Thêm class 'show' để bắt đầu hiệu ứng
+                entry.target.classList.add("show");
+                // Nếu muốn hiệu ứng chỉ chạy 1 lần duy nhất:
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Chỉ định đối tượng cần theo dõi
+    const target = document.querySelector(".business-card");
+    if (target) {
+        observer.observe(target);
+    }
 });

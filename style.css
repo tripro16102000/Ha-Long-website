@@ -51,7 +51,8 @@ nav {
     justify-content: center;
 }
 
-.logo { font-size: 1.5rem; font-weight: bold; color: #0044cc; }
+.logo {font-family: 'Playfair Display', serif;font-style: italic; color: transparent; /* Làm rỗng ruột chữ */
+    -webkit-text-stroke: 2px #0056b3; font-size: 1.5rem; font-weight: bold; color: #0044cc; }
 .logo span { color: #333; }
 
 .nav-links { display: flex; list-style: none; }
@@ -106,7 +107,7 @@ nav {
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
 
 /* Contact */
-.contact-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+.contact-wrapper { display: flex; grid-template-columns: 2fr 1fr; gap: 2rem; }
 #contactForm input, #contactForm textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
 
 /* Responsive */
@@ -179,3 +180,122 @@ nav {
 /* Hiệu ứng trễ cho từng hình (tạo cảm giác lần lượt) */
 .reveal-img:nth-child(2) { transition-delay: 0.2s; }
 .reveal-img:nth-child(3) { transition-delay: 0.4s; }
+
+
+.representative-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.business-card {
+    max-width: 500px;
+    margin: 40px auto;
+    perspective: 1000px;
+}
+
+.card-inner {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid #eee;
+}
+
+.card-content {
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-header-rep {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #1a5cff;
+    padding-bottom: 15px;
+}
+
+.card-logo-top {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.company-name-mini {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.rep-name {
+    font-size: 26px;
+    color: #222;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.rep-title {
+    color: #1a5cff;
+    font-weight: 600;
+    margin: 5px 0 25px 0;
+    font-size: 16px;
+}
+
+.rep-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rep-item {
+    display: flex;
+    align-items: center;
+    color: #444;
+    font-size: 16px;
+}
+
+.rep-item i {
+    width: 30px;
+    color: #1a5cff;
+    font-size: 18px;
+}
+
+.rep-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rep-item a:hover {
+    color: #1a5cff;
+}
+
+/* Miếng trang trí ở góc card cho sang trọng */
+.card-accent {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: #1a5cff;
+    transform: rotate(45deg);
+    z-index: 1;
+    opacity: 0.1;
+}
+
+/* Trạng thái ban đầu của Card */
+.business-card {
+    opacity: 0;
+    transform: translateX(-100px); /* Đẩy sang trái 100px */
+    transition: all 1.2s ease-out; /* Thời gian chạy hiệu ứng */
+    filter: blur(5px); /* Thêm chút hiệu ứng mờ cho nghệ thuật */
+}
+
+/* Khi cuộn đến, JavaScript sẽ thêm class này */
+.business-card.show {
+    opacity: 1;
+    transform: translateX(0); /* Trở về vị trí gốc */
+    filter: blur(0);
+}
