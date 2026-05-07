@@ -1,7 +1,7 @@
 // Dữ liệu ngôn ngữ
 const translations = {
     en: {
-        nav_logo: "Ha Long IMEX",
+        nav_logo: "Ha Long MFG & EXP JSC",
         nav_home: "Home",
         nav_about: "About Us",
         nav_contact: "Contact",
