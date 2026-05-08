@@ -1,7 +1,7 @@
 // Dữ liệu ngôn ngữ
 const translations = {
     en: {
-        nav_logo: "Ha Long MFG & EXP JSC",
+        nav_logo: "Ha Long MFG & IMEX JSC",
         nav_home: "Home",
         nav_about: "About Us",
         nav_contact: "Contact",
@@ -23,7 +23,8 @@ const translations = {
         company_email: "Email: tntxhalong@gmail.com" ,
         rep_title: "Our Representative",
         person_title: "Sales Manager / Representative",
-        person_name: "Mr. NGUYEN THE NAM"
+        person_name: "Mr. NGUYEN THE NAM",
+        consignee: "Our Consignee"
     },
     vi: {
         nav_logo: "Công ty Cổ phần SX & XNK Hạ Long ",
@@ -48,7 +49,8 @@ const translations = {
         company_email: "Email: tntxhalong@gmail.com",
         rep_title: "Đại diện của chúng tôi",
         person_title: "Giám đốc kinh doanh / Đại diện",
-        person_name: "Ông NGUYỄN THẾ NAM"
+        person_name: "Ông NGUYỄN THẾ NAM",
+        consignee: "Consignee của chúng tôi"
     },
     zh: {
         nav_logo: "下龙生产与进出口股份公司",
@@ -73,7 +75,8 @@ const translations = {
         company_email: "电子邮件: tntxhalong@gmail.com",
         rep_title: "我们的代表",
         person_title: "销售经理 / 代表",
-        person_name: "阮世南先生"    
+        person_name: "阮世南先生",
+        consignee: "我们的收货人"   
     }
 };
 
