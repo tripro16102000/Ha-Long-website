@@ -22,7 +22,7 @@ const translations = {
         company_phone: "Hotline: +84.865.236.992",  
         company_email: "Email: tntxhalong@gmail.com" ,
         rep_title: "Our Representative",
-        person_title: "Sales Manager / Representative",
+        person_title: "Representative",
         person_name: "Mr. NGUYEN THE NAM",
         consignee: "Our Consignee"
     },
@@ -48,7 +48,7 @@ const translations = {
         company_phone: "Hotline: +84.865.236.992",
         company_email: "Email: tntxhalong@gmail.com",
         rep_title: "Đại diện của chúng tôi",
-        person_title: "Giám đốc kinh doanh / Đại diện",
+        person_title: "Đại diện",
         person_name: "Ông NGUYỄN THẾ NAM",
         consignee: "Consignee của chúng tôi"
     },
@@ -74,7 +74,7 @@ const translations = {
         company_phone: "热线: +84.865.236.992",
         company_email: "电子邮件: tntxhalong@gmail.com",
         rep_title: "我们的代表",
-        person_title: "销售经理 / 代表",
+        person_title: "代表",
         person_name: "阮世南先生",
         consignee: "我们的收货人"   
     }

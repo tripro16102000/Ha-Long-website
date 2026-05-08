@@ -107,7 +107,7 @@ nav {
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
 
 /* Contact */
-.contact-wrapper { display: flex; justify-content: center; grid-template-columns: 2fr 1fr; gap: 2rem; }
+.contact-wrapper { display: flex; justify-content: center; align-items: center; grid-template-columns: 2fr 1fr; gap: 2rem; }
 #contactForm input, #contactForm textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
 
 /* Responsive */
