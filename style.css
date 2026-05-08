@@ -8,7 +8,7 @@
 
 body { line-height: 1.6; color: #333; }
 .container { max-width: 1100px; margin: auto; padding: 0 2rem; overflow: hidden; }
-.section { padding: 4rem 0; }
+.section { padding: 4rem 1rem; }
 .section-title { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #0044cc; }
 .bg-light { background: #f4f4f4; }
 .btn { display: inline-block; background: #0044cc; color: #fff; padding: 0.8rem 2rem; border: none; cursor: pointer; text-decoration: none; border-radius: 5px; }
@@ -91,7 +91,7 @@ nav {
 /* Hero */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80');
+                url('./img/background.jpg');
     background-size: cover;
     background-position: center;
     height: 80vh;
